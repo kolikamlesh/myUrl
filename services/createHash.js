@@ -1,10 +1,11 @@
 const log = console.log
 const connection = require('../database/connectdb')
+const path = require('path')
 
 // functions
 
-function createHash(res, root, url){
-    let baseHash = Buffer.from(url).toString('base64').substring(8,14)
+function createHash(res, url){
+    let baseHash = Buffer.from(url).toString('base64').substring(url.length - 7,url.length - 1)
     let count 
 
     // fetching hash if exist in database
@@ -19,12 +20,12 @@ function createHash(res, root, url){
             connection.query(`update hashurl set count = ${count} where hash = '${baseHash}'`)
             connection.query(`insert into hashurl values('${newHash}', 0,'${url}')`)
 
-            res.render(root + '/views/index.ejs', {responce: 'http://localhost:9000/resolve/' + newHash})
+            res.render(path.resolve(__dirname + '/../views/index.ejs'), {responce: 'http://localhost:9000/resolve/' + newHash})
         }
 
         else{
             connection.query(`insert into hashurl values('${baseHash}', 0,'${url}')`)
-            res.render(root + '/views/index.ejs', {responce: 'http://localhost:9000/resolve/' + baseHash})
+            res.render(path.resolve(__dirname + '/../views/index.ejs'), {responce: 'http://localhost:9000/resolve/' + baseHash})
         }
     })
 }
