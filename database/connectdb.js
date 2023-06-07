@@ -17,4 +17,5 @@ connection.connect((err) => {
         log('connected to database')
     }
 })
+
 module.exports = connection
