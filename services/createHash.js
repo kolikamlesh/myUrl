@@ -6,7 +6,7 @@ const path = require('path')
 // functions
 
 function createHash(res, url){
-    let baseHash = md5(url).substring(url.length - 7,url.length - 1)
+    let baseHash = md5(url).substring(0,7)
     let count 
 
     // fetching hash if exist in database
