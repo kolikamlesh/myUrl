@@ -90,8 +90,8 @@
 
             #copy {
                 position: absolute;
-                top: 63%;
-                left: 77%;
+                top: 70%;
+                left: 51%;
                 height: 40px;
                 width: 80px;
                 border-radius: 6px;
@@ -103,8 +103,23 @@
                 transition: background-color 0.3s;
             }
 
-            #copy:hover {
-                background-color: #00f135;
+            #redirect{
+                position: absolute;
+                top: 70%;
+                left: 40%;
+                height: 40px;
+                width: 80px;
+                border-radius: 6px;
+                font-size: 18px;
+                background-color: #0a0393;
+                border: none;
+                color: white;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            #copy:hover, #redirect:hover {
+                background-color: #8507fc;
                 color: #0a0393;
                 font-weight: bold;
                 border-radius: 7px;
@@ -124,14 +139,14 @@
 
             <div class="banner">
                 <input type="text" value=<%= responce %> class="shortUrl" id="shorturlbanner">
-                <button onclick="myFunction()" id="copy">copy</button>
-                
+                <button onclick="copy()" id="copy">copy</button>
+                <button onclick="redirect()" id="redirect">redirect</button>
             </div>
         </div>
 
         <script>
 
-            function myFunction() {
+            function copy() {
                 // Get the text field
                 let copyText = document.getElementById('shorturlbanner')
 
@@ -145,6 +160,10 @@
 
                 // Alert the copied text
                 // alert("Copied the text: " + copyText.innerHTML);
+            }
+
+            function redirect(){
+                window.location.href = document.getElementById('shorturlbanner').value
             }
         </script>
     </body>
