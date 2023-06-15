@@ -38,3 +38,30 @@ for 7 charater there are ( 15 x 15 x 15 x 15 x 15 x 15 x 15 ) + n possibilities 
 of urls 
 
 here 'n' is number of collisions occured for specific id
+
+
+_______________________________
+
+# how to install
+
+step 1 : how to download
+
+  create database and respective table first by using db.sql file present in database folder
+
+step 2 : how to install
+
+  download zip or clone repository run the command
+  npm install
+
+  that's it you just installed it
+
+step 3 : how to run
+
+  to run it your system must have nodejs installed run command
+  npm run start
+
+  or
+
+  node index.js
+  
+  
