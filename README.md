@@ -34,5 +34,7 @@ Example MD5 hash: 5D41402ABC4B2A76B9719D911017C592
 In the example above, each character in the MD5 hash is one of the characters listed.
 ___________________________________________________________________
 
-for 7 charater there are 15*15*15*15*15*15*15 possibilities of unique urls with collision resolving technique we can generate enumorous amount
+for 7 charater there are ( 15 x 15 x 15 x 15 x 15 x 15 x 15 ) + n possibilities of unique urls with collision resolving technique we can generate enumorous amount
 of urls 
+
+here 'n' is number of collisions occured for specific id
