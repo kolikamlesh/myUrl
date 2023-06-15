@@ -1,11 +1,12 @@
 const log = console.log
+const md5 = require('md5')
 const connection = require('../database/connectdb')
 const path = require('path')
 
 // functions
 
 function createHash(res, url){
-    let baseHash = Buffer.from(url).toString('base64').substring(url.length - 7,url.length - 1)
+    let baseHash = md5(url).substring(url.length - 7,url.length - 1)
     let count 
 
     // fetching hash if exist in database

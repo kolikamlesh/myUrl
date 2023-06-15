@@ -1,12 +1,18 @@
 const connection = require('../database/connectdb')
+const express = require('express')
+const app = express()
+const router = express.Router()
 const ifError = require('../services/ifError')
 const isValidUrl = require('../services/isValidUrl')
 const createHash = require('../services/createHash')
 const path = require('path')
 
-function createShort(req, res){
+app.use(express.urlencoded({extended: true}))
+
+router.post('/', (req, res) => {
 
     isValidUrl(req.body.url, (valid) => {
+    
         if(valid == false){
             res.render(path.resolve(__dirname + '/../views/index.ejs'), {responce: 'invalid url'})
         }
@@ -27,7 +33,7 @@ function createShort(req, res){
             })
         }
 
-    })
-}
+    }) 
+})
 
-module.exports = createShort
+module.exports = router

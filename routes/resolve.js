@@ -1,10 +1,10 @@
-const connection = require('../database/connectdb')
 const ifError = require('../services/ifError')
+const connection = require('../database/connectdb')
+const express = require('express')
+const router = express.Router()
 const path = require('path')
 
-function resolve(req, res){
-
-    // fetching original url by using id
+router.get('/:id', (req, res) => {
     connection.query(`select * from hashurl where hash = '${req.params.id}'`, (err, result) => {
 
         ifError(res, err)
@@ -17,6 +17,6 @@ function resolve(req, res){
             res.redirect(result[0].url)
         }
     })
-}
+})
 
-module.exports = resolve
+module.exports = router
