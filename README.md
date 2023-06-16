@@ -44,16 +44,16 @@ _______________________________
 
 # how to install
 
-step 1 : how to download
-
-  create database and respective table first by using db.sql file present in database folder
-
-step 2 : how to install
+step 1 : how to install
 
   download zip or clone repository run the command
   npm install
 
   that's it you just installed it
+
+step 2 : create database
+
+   create database and respective table first by using db.sql file present in database folder
 
 step 3 : how to run
 
